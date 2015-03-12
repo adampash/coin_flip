@@ -2,6 +2,7 @@
 $ = require 'jquery'
 call = null
 post = "http://gawker.com/take-the-pledge-i-will-not-have-sex-with-anyone-who-we-1690368564"
+flipping = false
 
 responses =
   heads:
@@ -23,6 +24,7 @@ coin =
   heads: "tails"
   tails: "heads"
 $('.call h3 a').on 'click', ->
+  return if flipping
   call = $(@).data('call')
   if responses[call].index > 2
     responses[call].index = 0
@@ -49,6 +51,7 @@ $('.call h3 a').on 'click', ->
   return false
 
 flip = (times, complete) ->
+  flipping = true
   $('.share').hide()
   random = Math.round(Math.random() * 1)
   if times % 2
@@ -61,6 +64,7 @@ flip = (times, complete) ->
       flip(times, complete)
     , 350
   else
+    flipping = false
     complete if times is 1 then "heads" else "tails"
 
 
