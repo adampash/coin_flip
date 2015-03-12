@@ -2,6 +2,17 @@
 @import "typography";
 @import "iframes";
 
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+
 .front {
   background: blue;
   background: url(images/heads.png);
@@ -17,6 +28,9 @@
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
 }
   /* flip the pane when hovered */
   .flip-container.hover .flipper {
@@ -73,3 +87,26 @@
   .vertical.flip-container .flipper.flip {
     transform: rotateX(-180deg);
   }
+
+.text_container {
+  padding: 20px 0;
+  margin-left: 250px;
+  font-family: ProximaNovaACond-Semibold;
+  font-size: 24px;
+  .call
+    h3 a {
+      padding: 0 10px;
+      color: #2885E0;
+      text-decoration: none;
+      border: none;
+      &:hover {
+        color: #14599D;
+      }
+    }
+}
+.result {
+  // float: right;
+}
+
+
+@font-face {font-family: 'ProximaNovaACond-Semibold';src: url('webfonts/24FCCC_3_0.eot');src: url('webfonts/24FCCC_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24FCCC_3_0.woff') format('woff'),url('webfonts/24FCCC_3_0.ttf') format('truetype');}

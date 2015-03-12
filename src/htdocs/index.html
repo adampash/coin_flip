@@ -8,15 +8,26 @@
   </head>
 
   <body>
-    <div class="vertical flip-container" ontouchstart="this.classList.toggle('hover');">
-      <div class="flipper">
-        <div class="front">
-        </div>
-        <div class="back">
+    <div class="container">
+      <div class="vertical flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+          </div>
+          <div class="back">
+          </div>
         </div>
       </div>
+      <div class="text_container">
+        <div class="call">
+          <h3>
+            Call it:
+            <a data-call="heads" class="coin heads" href="#">HEADS</a>
+            <a data-call="tails" class="coin tails" href="#">TAILS</a>
+          </h3>
+        </div>
+        <h4 class="result"></h4>
+      </div>
     </div>
-    <h4 class="result"></h4>
     <script src="global.js"></script>
   </body>
 </html>
