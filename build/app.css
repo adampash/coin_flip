@@ -1,0 +1,174 @@
+/* line 1, /Users/ap/code/labs/interactives/coin_flip/src/sass/_typography.sass */
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #555;
+  font-family: sans-serif; }
+
+/* line 1, /Users/ap/code/labs/interactives/coin_flip/src/sass/_iframes.sass */
+div.wide {
+  width: 640px; }
+
+/* line 5, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+  /* line 9, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+  body .container {
+    max-width: 700px;
+    margin: 0 auto; }
+
+/* line 16, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.front {
+  background: blue;
+  background: url(images/heads.png);
+  background-repeat: no-repeat; }
+
+/* line 22, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.back {
+  background: green;
+  background: url(images/tails.png);
+  background-repeat: no-repeat; }
+
+/* entire container, keeps perspective */
+/* line 29, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.flip-container {
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  display: inline-block;
+  float: left;
+  cursor: pointer; }
+
+/* flip the pane when hovered */
+/* line 36, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.flip-container.hover .flipper {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg); }
+
+/* line 40, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.flip-container, .front, .back {
+  width: 212px;
+  height: 211px; }
+
+/* flip speed goes here */
+/* line 46, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.flipper {
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative; }
+
+/* hide back of pane during swap */
+/* line 54, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.front, .back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+/* front pane, placed above back */
+/* line 63, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg); }
+
+/* back, initially hidden pane */
+/* line 70, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg); }
+
+/* line 74, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.win {
+  color: #6ab373; }
+
+/* line 77, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.lose {
+  color: #e0413b; }
+
+/* line 81, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.vertical.flip-container {
+  position: relative; }
+
+/* line 85, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.vertical .back {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg); }
+
+/* line 89, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.vertical.flip-container .flipper {
+  -webkit-transform-origin: 100% 111px;
+          transform-origin: 100% 111px;
+  /* half of height */ }
+
+/* line 93, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.vertical.flip-container .flipper.flip {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg); }
+
+/* line 97, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.text_container {
+  padding: 0px 0;
+  margin-left: 250px;
+  font-family: ProximaNovaACond-Semibold;
+  font-size: 24px; }
+  /* line 103, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+  .text_container .call h3 a {
+    padding: 0 10px;
+    color: #2885E0;
+    text-decoration: none;
+    border: none; }
+    /* line 108, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+    .text_container .call h3 a:hover {
+      color: #14599D; }
+
+/* line 118, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.share {
+  height: 36px;
+  display: none; }
+
+/* line 122, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+.share a, button.submit {
+  background: #65C1FA;
+  border: none;
+  color: white;
+  text-decoration: none;
+  padding: 10px; }
+  /* line 128, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+  .share a:hover, button.submit:hover {
+    background: #2682BB; }
+
+@media screen and (max-width: 480px) {
+  /* line 136, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+  body .flip-container {
+    display: block;
+    float: none;
+    margin: 0 auto; }
+  /* line 141, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+  body .text_container {
+    margin: 0 10px;
+    padding: 0; }
+    /* line 144, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+    body .text_container h3 {
+      text-align: center; }
+    /* line 147, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+    body .text_container .result {
+      font-size: 18px; }
+  /* line 152, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+  .share a, button.submit {
+    font-size: 18px; }
+    /* line 154, /Users/ap/code/labs/interactives/coin_flip/src/sass/app.sass */
+    .share a:hover, button.submit:hover {
+      background: #2682BB; } }
+
+@font-face {
+  font-family: 'ProximaNovaACond-Semibold';
+  src: url('webfonts/24FCCC_3_0.eot');
+  src: url('webfonts/24FCCC_3_0.eot?#iefix') format('embedded-opentype'), url('webfonts/24FCCC_3_0.woff') format('woff'), url('webfonts/24FCCC_3_0.ttf') format('truetype'); }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl90eXBvZ3JhcGh5LnNhc3MiLCJfc2Nzcy1taXhpbnMuc2NzcyIsIl9pZnJhbWVzLnNhc3MiLCJhcHAuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7RUNDRSxBQUF5QjtFQUN6QixBQUF3QjtFREF4QixBQUFPO0VBQ1AsQUFBYTs7O0FFSGYsQUFBRztFQUNELEFBQU87OztBQ0dUO0VBQ0UsQUFBTztFQUNQLEFBQVM7RUFDVCxBQUFROztFQUNWLEFBQUs7SUFDRCxBQUFXO0lBQ1gsQUFBUTs7O0FBS1o7RUFDRSxBQUFZO0VBQ1osQUFBWTtFQUNaLEFBQW1COzs7QUFHckI7RUFDRSxBQUFZO0VBQ1osQUFBWTtFQUNaLEFBQW1COzs7O0FBSXJCO0VBQ0UsQUFBYTtFQUNiLEFBQVM7RUFDVCxBQUFPO0VBQ1AsQUFBUTs7OztBQUdWLEFBQWUsQUFBTztFQUNsQixBQUFXOzs7QUFHZixBQUFpQixBQUFRO0VBQ3ZCLEFBQU87RUFDUCxBQUFROzs7O0FBSVY7RUFDRSxBQUFZO0VBQ1osQUFBaUI7RUFFakIsQUFBVTs7OztBQUlaLEFBQVE7RUFDTixBQUFxQjtFQUVyQixBQUFVO0VBQ1YsQUFBSztFQUNMLEFBQU07Ozs7QUFJUjtFQUNFLEFBQVM7O0VBRVAsQUFBVzs7OztBQUlmO0VBQ0UsQUFBVzs7O0FBR2I7RUFDRSxBQUFPOzs7QUFFVDtFQUNFLEFBQU87OztBQUdULEFBQVM7RUFDUCxBQUFVOzs7QUFHWixBQUFVO0VBQ04sQUFBVzs7O0FBR2YsQUFBUyxBQUFnQjtFQUNyQixBQUFrQjs7OztBQUd0QixBQUFTLEFBQWdCLEFBQVE7RUFDN0IsQUFBVzs7O0FBR2Y7RUFDRSxBQUFTO0VBQ1QsQUFBYTtFQUNiLEFBQWE7RUFDYixBQUFXOztFQUNiLEFBQWdCLEFBQU0sQUFBRztJQUVuQixBQUFTO0lBQ1QsQUFBTztJQUNQLEFBQWlCO0lBQ2pCLEFBQVE7O0lBQ2QsQUFBZ0IsQUFBTSxBQUFHLEFBQUM7TUFDbEIsQUFBTzs7O0FBU2Y7RUFDRSxBQUFRO0VBQ1IsQUFBUzs7O0FBRVgsQUFBTyxBQUFHLEFBQU07RUFDZCxBQUFZO0VBQ1osQUFBUTtFQUNSLEFBQU87RUFDUCxBQUFpQjtFQUNqQixBQUFTOztFQUNYLEFBQU8sQUFBQyxBQUFRLEFBQU0sQUFBTztJQUN6QixBQUFZOztBQUtoQjs7RUFFQSxBQUFLO0lBQ0MsQUFBUztJQUNULEFBQU87SUFDUCxBQUFROztFQUVkLEFBQUs7SUFDQyxBQUFRO0lBQ1IsQUFBUzs7SUFDZixBQUFLLEFBQWdCO01BQ2IsQUFBWTs7SUFFcEIsQUFBSyxBQUFnQjtNQUNiLEFBQVc7O0VBSW5CLEFBQU8sQUFBRyxBQUFNO0lBQ1osQUFBVzs7SUFDZixBQUFPLEFBQUMsQUFBUSxBQUFNLEFBQU87TUFDdkIsQUFBWTs7O0VBS04sQUFBYTtFQUE2QixBQUFLO0VBQStCLEFBQXFFIiwiZmlsZSI6ImFwcC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5XG4gICtmb250LXNtb290aGluZyAvLyA8LSBfbWl4aW5zLnNjc3NcbiAgY29sb3I6ICM1NTVcbiAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWZcbiIsIkBtaXhpbiBmb250LXNtb290aGluZyB7XG4gIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG4gIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xufVxuIiwiZGl2LndpZGVcbiAgd2lkdGg6IDY0MHB4XG4iLCJAaW1wb3J0IFwic2Nzcy1taXhpbnNcIjtcbkBpbXBvcnQgXCJ0eXBvZ3JhcGh5XCI7XG5AaW1wb3J0IFwiaWZyYW1lc1wiO1xuXG5ib2R5IHtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMDtcbiAgLmNvbnRhaW5lciB7XG4gICAgbWF4LXdpZHRoOiA3MDBweDtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgfVxufVxuXG5cbi5mcm9udCB7XG4gIGJhY2tncm91bmQ6IGJsdWU7XG4gIGJhY2tncm91bmQ6IHVybChpbWFnZXMvaGVhZHMucG5nKTtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbn1cblxuLmJhY2sge1xuICBiYWNrZ3JvdW5kOiBncmVlbjtcbiAgYmFja2dyb3VuZDogdXJsKGltYWdlcy90YWlscy5wbmcpO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xufVxuXG4vKiBlbnRpcmUgY29udGFpbmVyLCBrZWVwcyBwZXJzcGVjdGl2ZSAqL1xuLmZsaXAtY29udGFpbmVyIHtcbiAgcGVyc3BlY3RpdmU6IDEwMDA7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgZmxvYXQ6IGxlZnQ7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbiAgLyogZmxpcCB0aGUgcGFuZSB3aGVuIGhvdmVyZWQgKi9cbiAgLmZsaXAtY29udGFpbmVyLmhvdmVyIC5mbGlwcGVyIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZVkoMTgwZGVnKTtcbiAgfVxuXG4uZmxpcC1jb250YWluZXIsIC5mcm9udCwgLmJhY2sge1xuICB3aWR0aDogMjEycHg7XG4gIGhlaWdodDogMjExcHg7XG59XG5cbi8qIGZsaXAgc3BlZWQgZ29lcyBoZXJlICovXG4uZmxpcHBlciB7XG4gIHRyYW5zaXRpb246IDAuNnM7XG4gIHRyYW5zZm9ybS1zdHlsZTogcHJlc2VydmUtM2Q7XG5cbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4vKiBoaWRlIGJhY2sgb2YgcGFuZSBkdXJpbmcgc3dhcCAqL1xuLmZyb250LCAuYmFjayB7XG4gIGJhY2tmYWNlLXZpc2liaWxpdHk6IGhpZGRlbjtcblxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbn1cblxuLyogZnJvbnQgcGFuZSwgcGxhY2VkIGFib3ZlIGJhY2sgKi9cbi5mcm9udCB7XG4gIHotaW5kZXg6IDI7XG4gIC8qIGZvciBmaXJlZm94IDMxICovXG4gICAgdHJhbnNmb3JtOiByb3RhdGVZKDBkZWcpO1xufVxuXG4vKiBiYWNrLCBpbml0aWFsbHkgaGlkZGVuIHBhbmUgKi9cbi5iYWNrIHtcbiAgdHJhbnNmb3JtOiByb3RhdGVZKDE4MGRlZyk7XG59XG5cbi53aW4ge1xuICBjb2xvcjogcmdiKDEwNiwgMTc5LCAxMTUpO1xufVxuLmxvc2Uge1xuICBjb2xvcjogcmdiKDIyNCwgNjUsIDU5KTtcbn1cblxuLnZlcnRpY2FsLmZsaXAtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4gIC52ZXJ0aWNhbCAuYmFjayB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGVYKDE4MGRlZyk7XG4gIH1cblxuICAudmVydGljYWwuZmxpcC1jb250YWluZXIgLmZsaXBwZXIge1xuICAgIHRyYW5zZm9ybS1vcmlnaW46IDEwMCUgMTExcHg7IC8qIGhhbGYgb2YgaGVpZ2h0ICovXG4gIH1cblxuICAudmVydGljYWwuZmxpcC1jb250YWluZXIgLmZsaXBwZXIuZmxpcCB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGVYKC0xODBkZWcpO1xuICB9XG5cbi50ZXh0X2NvbnRhaW5lciB7XG4gIHBhZGRpbmc6IDBweCAwO1xuICBtYXJnaW4tbGVmdDogMjUwcHg7XG4gIGZvbnQtZmFtaWx5OiBQcm94aW1hTm92YUFDb25kLVNlbWlib2xkO1xuICBmb250LXNpemU6IDI0cHg7XG4gIC5jYWxsXG4gICAgaDMgYSB7XG4gICAgICBwYWRkaW5nOiAwIDEwcHg7XG4gICAgICBjb2xvcjogIzI4ODVFMDtcbiAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgICY6aG92ZXIge1xuICAgICAgICBjb2xvcjogIzE0NTk5RDtcbiAgICAgIH1cbiAgICB9XG59XG4ucmVzdWx0IHtcbiAgLy8gZmxvYXQ6IHJpZ2h0O1xufVxuXG5cbi5zaGFyZSB7XG4gIGhlaWdodDogMzZweDtcbiAgZGlzcGxheTogbm9uZTtcbn1cbi5zaGFyZSBhLCBidXR0b24uc3VibWl0IHtcbiAgYmFja2dyb3VuZDogIzY1QzFGQTtcbiAgYm9yZGVyOiBub25lO1xuICBjb2xvcjogd2hpdGU7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgcGFkZGluZzogMTBweDtcbiAgJjpob3ZlciB7XG4gICAgYmFja2dyb3VuZDogIzI2ODJCQjtcbiAgfVxufVxuXG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGggOiA0ODBweCkge1xuICBib2R5IHtcbiAgICAuZmxpcC1jb250YWluZXIge1xuICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICBmbG9hdDogbm9uZTtcbiAgICAgIG1hcmdpbjogMCBhdXRvO1xuICAgIH1cbiAgICAudGV4dF9jb250YWluZXIge1xuICAgICAgbWFyZ2luOiAwIDEwcHg7XG4gICAgICBwYWRkaW5nOiAwO1xuICAgICAgaDMge1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICB9XG4gICAgICAucmVzdWx0IHtcbiAgICAgICAgZm9udC1zaXplOiAxOHB4O1xuICAgICAgfVxuICAgIH1cbiAgfVxuICAuc2hhcmUgYSwgYnV0dG9uLnN1Ym1pdCB7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICAgICY6aG92ZXIge1xuICAgICAgYmFja2dyb3VuZDogIzI2ODJCQjtcbiAgICB9XG4gIH1cbn1cblxuQGZvbnQtZmFjZSB7Zm9udC1mYW1pbHk6ICdQcm94aW1hTm92YUFDb25kLVNlbWlib2xkJztzcmM6IHVybCgnd2ViZm9udHMvMjRGQ0NDXzNfMC5lb3QnKTtzcmM6IHVybCgnd2ViZm9udHMvMjRGQ0NDXzNfMC5lb3Q/I2llZml4JykgZm9ybWF0KCdlbWJlZGRlZC1vcGVudHlwZScpLHVybCgnd2ViZm9udHMvMjRGQ0NDXzNfMC53b2ZmJykgZm9ybWF0KCd3b2ZmJyksdXJsKCd3ZWJmb250cy8yNEZDQ0NfM18wLnR0ZicpIGZvcm1hdCgndHJ1ZXR5cGUnKTt9XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

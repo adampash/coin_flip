@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thing</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="vertical flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+          </div>
+          <div class="back">
+          </div>
+        </div>
+      </div>
+      <div class="text_container">
+        <div class="call">
+          <h3>
+            Call it:
+            <a data-call="heads" class="coin heads" href="#">HEADS</a>
+            <a data-call="tails" class="coin tails" href="#">TAILS</a>
+          </h3>
+        </div>
+        <h4 class="result"></h4>
+        <div class="share">
+          <a class="fb_share" href="#">Share on Facebook</a>
+          <a class="tw_share" href="#">Share on Twitter</a>
+        </div>
+      </div>
+    </div>
+    <script src="global.js"></script>
+  </body>
+</html>
