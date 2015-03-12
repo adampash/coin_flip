@@ -8,9 +8,15 @@
   </head>
 
   <body>
-    <h1>This is a thing</h1>
-    <div id="content"></div>
+    <div class="vertical flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper">
+        <div class="front">
+        </div>
+        <div class="back">
+        </div>
+      </div>
+    </div>
+    <h4 class="result"></h4>
     <script src="global.js"></script>
-    <script src="page.js"></script>
   </body>
 </html>

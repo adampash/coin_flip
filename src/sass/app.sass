@@ -1,3 +1,75 @@
 @import "scss-mixins";
 @import "typography";
 @import "iframes";
+
+.front {
+  background: blue;
+  background: url(images/heads.png);
+  background-repeat: no-repeat;
+}
+
+.back {
+  background: green;
+  background: url(images/tails.png);
+  background-repeat: no-repeat;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+}
+  /* flip the pane when hovered */
+  .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 212px;
+  height: 211px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+
+
+.vertical.flip-container {
+  position: relative;
+}
+
+  .vertical .back {
+    transform: rotateX(180deg);
+  }
+
+  .vertical.flip-container .flipper {
+    transform-origin: 100% 111px; /* half of height */
+  }
+
+  .vertical.flip-container .flipper.flip {
+    transform: rotateX(-180deg);
+  }
