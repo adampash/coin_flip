@@ -71,6 +71,12 @@ body {
   transform: rotateY(180deg);
 }
 
+.win {
+  color: rgb(106, 179, 115);
+}
+.lose {
+  color: rgb(224, 65, 59);
+}
 
 .vertical.flip-container {
   position: relative;
@@ -89,7 +95,7 @@ body {
   }
 
 .text_container {
-  padding: 20px 0;
+  padding: 0px 0;
   margin-left: 250px;
   font-family: ProximaNovaACond-Semibold;
   font-size: 24px;
@@ -108,5 +114,47 @@ body {
   // float: right;
 }
 
+
+.share {
+  height: 36px;
+  display: none;
+}
+.share a, button.submit {
+  background: #65C1FA;
+  border: none;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  &:hover {
+    background: #2682BB;
+  }
+}
+
+
+@media screen and (max-width : 480px) {
+  body {
+    .flip-container {
+      display: block;
+      float: none;
+      margin: 0 auto;
+    }
+    .text_container {
+      margin: 0 10px;
+      padding: 0;
+      h3 {
+        text-align: center;
+      }
+      .result {
+        font-size: 18px;
+      }
+    }
+  }
+  .share a, button.submit {
+    font-size: 18px;
+    &:hover {
+      background: #2682BB;
+    }
+  }
+}
 
 @font-face {font-family: 'ProximaNovaACond-Semibold';src: url('webfonts/24FCCC_3_0.eot');src: url('webfonts/24FCCC_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24FCCC_3_0.woff') format('woff'),url('webfonts/24FCCC_3_0.ttf') format('truetype');}
