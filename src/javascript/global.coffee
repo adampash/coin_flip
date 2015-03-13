@@ -76,7 +76,7 @@ $('.share a').on 'click', ->
     if text.length > 92
       text = text.replace(/\s(but|and) you (lose|win)\./i, '')
       text += " #HeadsOrTails" if text.length < 106
-    link = "https://twitter.com/home?status=#{encodeURIComponent "#{text} "}%20#{encodeURIComponent post}"
+    link = "https://twitter.com/home?status=#{encodeURIComponent text}%20#{encodeURIComponent post}"
   else
     share_link = encodeURIComponent post
     link = "https://www.facebook.com/sharer/sharer.php?u=#{share_link}"
