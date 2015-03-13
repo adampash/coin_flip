@@ -45,7 +45,7 @@ $('.call h3 a').on 'click', ->
         success = '<span class="win">And YOU WIN.</span>'
       else
         success = '<span class="lose">But YOU LOSE.</span>'
-      result_text = "You chose #{call.toUpperCase()}. #{message} #{success}"
+      result_text = "You chose #{call.toUpperCase()}.<br>#{message} <br>#{success}"
       $('.result').html(result_text)
     , 400
   return false
