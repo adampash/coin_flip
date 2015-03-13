@@ -1,7 +1,7 @@
 # Browserify entry point for the global.js bundle (yay CoffeeScript!)
 $ = require 'jquery'
 call = null
-post = "http://gawker.com/take-the-pledge-i-will-not-have-sex-with-anyone-who-we-1690368564"
+post = "http://gawker.com/quiz-heads-or-tails-1691195516"
 flipping = false
 
 responses =
