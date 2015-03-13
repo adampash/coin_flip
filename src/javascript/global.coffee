@@ -28,7 +28,7 @@ $('.call h3 a').on 'click', ->
   call = $(@).data('call')
   if responses[call].index > 2
     responses[call].index = 0
-  $(".call .#{coin[call]}").hide()
+  # $(".call .#{coin[call]}").hide()
   $('.result').text("You chose #{call.toUpperCase()}.")
   flip_times = 6
   unless $('.flipper').hasClass('flip')
@@ -73,9 +73,10 @@ $('.share a').on 'click', ->
   name = $('.name').val()
   if $(@).hasClass('tw_share')
     text = $('.result').text()
-    if text.length > 106
-      text = text.replace(/(but|and) you (lose|win)\./i, '')
-    link = "https://twitter.com/home?status=#{encodeURIComponent text}%20#{encodeURIComponent post}"
+    if text.length > 92
+      text = text.replace(/\s(but|and) you (lose|win)\./i, '')
+      text += " #HeadsOrTails" if text.length < 106
+    link = "https://twitter.com/home?status=#{encodeURIComponent "#{text} "}%20#{encodeURIComponent post}"
   else
     share_link = encodeURIComponent post
     link = "https://www.facebook.com/sharer/sharer.php?u=#{share_link}"
